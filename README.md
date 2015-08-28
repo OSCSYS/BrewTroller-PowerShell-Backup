@@ -16,7 +16,8 @@ Windows PowerShell Script for Backup and Restore of BrewTroller Settings via USB
           <Parity>  Parity configured in BrewTroller firmware. Default = 'None'. Also supported 'Even', 'Odd', 'Mark', 'Space'
         <StopBits>  Stop bits configured in BrewTroller firmware. Default = 'One'. Also available 'None', 'OnePointFive', 'Two'
 
-
+Backup Example (Full Scope)
+----
     PS > .\BrewTrollerBackup.ps1 -operation backup -fileName .\Backup.txt -portName COM25
     
     Verifying communication. Success
@@ -115,6 +116,9 @@ Windows PowerShell Script for Backup and Restore of BrewTroller Settings via USB
     Retrieving Volume Capacity Index 2
     Wrote 92 items to .\Backup.txt
 
+
+Restore Example (Full Scope)
+----
     PS > .\BrewTrollerBackup.ps1 -operation restore -fileName .\Backup.txt -portName COM25
     
     Verifying communication. Success
@@ -212,9 +216,11 @@ Windows PowerShell Script for Backup and Restore of BrewTroller Settings via USB
     Restore: Volume Capacity Index 1: Success
     Restore: Volume Capacity Index 2: Success
 
+
 Restore Example (Partial Scope)
 ----
 You may also choose to backup or restore a subset of settings using the -scope parameter.
+
     PS > .\BrewTrollerBackup.ps1 -operation restore -fileName .\Backup.txt -portName COM25 -scope SystemSettings
     Verifying communication. Success
     BrewTroller v2.7 Build 12 (Imperial)
@@ -310,6 +316,7 @@ You may also choose to backup or restore a subset of settings using the -scope p
     Skipping (Out of Scope) Volume Capacity Index 0
     Skipping (Out of Scope) Volume Capacity Index 1
     Skipping (Out of Scope) Volume Capacity Index 2
+
 
 ScopeList Example
 ----
